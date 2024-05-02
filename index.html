@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RC4 Encryption/Decryption</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="encryption">
+            <h2>RC4 Encryption</h2>
+            <form id="encryptForm">
+                <label for="plainText">Plain Text:</label>
+                <textarea id="plainText" rows="4" cols="50"></textarea><br>
+                <label for="key">Key:</label>
+                <input type="text" id="key"><br>
+                <button type="submit">Encrypt</button>
+                <div id="encryptedText"></div> 
+            </form>
+        </div>
+
+        <div class="decryption">
+            <h2>RC4 Decryption</h2>
+            <form id="decryptForm">
+                <label for="cipherText">Cipher Text:</label>
+                <textarea id="cipherText" rows="4" cols="50"></textarea><br>
+                <label for="decryptionKey">Key:</label>
+                <input type="text" id="decryptionKey"><br>
+                <button type="submit">Decrypt</button>
+                <div id="decryptedText"></div> >
+            </form>
+        </div>
+    </div>
+    <div class="watermark">© 2024 Made by Rahmat Mahardika.</div> 
+
+    <script src="rc4.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
