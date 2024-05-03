@@ -14,7 +14,7 @@ header {
 }
 
 .logo img {
-    height: 40px; /* Sesuaikan ukuran logo sesuai kebutuhan */
+    height: 40px;
 }
 
 .title {
@@ -114,14 +114,14 @@ hr {
 }
 
 .button a.btn {
-    color: #fff; /* Mengubah warna teks menjadi putih */
-    background-color: transparent; /* Menghapus latar belakang tombol */
-    border: none; /* Menghapus garis batas tombol */
-    text-decoration: none; /* Menghapus garis bawah default pada link */
+    color: #fff; 
+    background-color: transparent; 
+    border: none;
+    text-decoration: none; 
 }
 
 .button a.btn:hover {
-    color: #ccc; /* Mengubah warna teks saat tombol dihover */
+    color: #ccc; 
 }
 
 .card {
@@ -148,20 +148,20 @@ hr {
 .card th, .card td {
     padding: 8px;
     text-align: center;
-    border-bottom: 1px solid #a1a1a1; /* Garis pemisah antar baris */
+    border-bottom: 1px solid #a1a1a1; 
 }
 
 .card th {
-    background-color: #282828; /* Warna latar belakang header tabel */
-    color: #fff; /* Warna teks header tabel */
+    background-color: #282828; 
+    color: #fff; 
 }
 
 .card td {
-    background-color: #383838; /* Warna latar belakang sel tabel */
+    background-color: #383838; 
 }
 
 .card tr:nth-child(even) td {
-    background-color: #404040; /* Warna latar belakang sel tabel untuk baris genap */
+    background-color: #404040; 
 }
 
 
