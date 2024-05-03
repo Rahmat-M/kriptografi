@@ -14,7 +14,7 @@ header {
 }
 
 .logo img {
-    height: 50px; /* Sesuaikan ukuran logo sesuai kebutuhan */
+    height: 40px; /* Sesuaikan ukuran logo sesuai kebutuhan */
 }
 
 .title {
@@ -23,7 +23,7 @@ header {
 
 .title h1 {
     color: #ffffff;
-    margin: 0;
+    margin-top: 5px;
 }
 
 .container {
@@ -67,7 +67,16 @@ textarea{
     border-radius: 5px;
     color: #fff;
 }
-
+input[type="number"],
+text{
+    width: calc(50% - 22px);
+    padding: 10px;
+    margin: 5px 0 70px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
 button[type="submit"] {
     padding: 10px 20px;
     background-color: #4CAF50;
@@ -102,6 +111,57 @@ hr {
     color: rgba(255, 255, 255, 0.3);
     font-size: 14px;
     font-style: italic;
+}
+
+.button a.btn {
+    color: #fff; /* Mengubah warna teks menjadi putih */
+    background-color: transparent; /* Menghapus latar belakang tombol */
+    border: none; /* Menghapus garis batas tombol */
+    text-decoration: none; /* Menghapus garis bawah default pada link */
+}
+
+.button a.btn:hover {
+    color: #ccc; /* Mengubah warna teks saat tombol dihover */
+}
+
+.card {
+    background-color: #222;
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    max-width: 600px;
+}
+
+.card h2 {
+    color: #fff;
+    text-align: center;
+}
+
+.card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.card th, .card td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #a1a1a1; /* Garis pemisah antar baris */
+}
+
+.card th {
+    background-color: #282828; /* Warna latar belakang header tabel */
+    color: #fff; /* Warna teks header tabel */
+}
+
+.card td {
+    background-color: #383838; /* Warna latar belakang sel tabel */
+}
+
+.card tr:nth-child(even) td {
+    background-color: #404040; /* Warna latar belakang sel tabel untuk baris genap */
 }
 
 

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritma RC4</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <div class="title">
+            <h1>Algoritma RC4</h1>
+        </div>
+        <div class="button">
+            <a href="index.html" class="btn">Home</a>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="card">
+            <h2>Random S-box Process</h2>
+            <!-- Isi penjelasan untuk Random S-box Process di sini -->
+            <p>Plain text : Rahmat</p>
+            <p>Key : 3253</p>
+            <p>Bit : 4</p>
+
+            <table>
+                <tr>
+                    <th>S</th>
+                    <th>0</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                </tr>
+                <tr>
+                    <td>K</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>3</td>
+                </tr>
+            </table>
+
+            <p>Iteration 1</p>
+            <p>i = 0</p>
+            <p>j = (0 + S[0] + K[0 mod 4]) mod 4</p>
+            <p>j = (0 + 0 + 3) mod 4</p>
+            <p>j = 3</p>
+            <p>swap : S[0], S[3]</p>
+            <p>result :</p>
+            <table>
+                <tr>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            </table>
+
+            <p>Iteration 2</p>
+            <p>i = 0</p>
+            <p>j = (3 + S[1] + K[1 mod 4]) mod 4</p>
+            <p>j = (3 + 1 + 2) mod 4</p>
+            <p>j = 2</p>
+            <p>swap : S[1], S[2]</p>
+            <p>result :</p>
+            <table>
+                <tr>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            </table>
+ 
+            <p>Iteration 3</p>
+            <p>i = 2</p>
+            <p>j = (2 + S[2] + K[2 mod 4]) mod 4</p>
+            <p>j = (2 + 1 + 5) mod 4</p>
+            <p>j = 0</p>
+            <p>swap : S[2], S[0]</p>
+            <p>result :</p>
+            <table>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            </table>
+
+            
+            <p>Iteration 4</p>
+            <p>i = 3</p>
+            <p>j = (0 + S[3] + K[3 mod 4]) mod 4</p>
+            <p>j = (0 + 0 + 3) mod 4</p>
+            <p>j = 3</p>
+            <p>swap : S[3], S[3]</p>
+            <p>result :</p>
+            <table>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>0</td>
+                </tr>
+            </table>
+            
+
+        </section>
+
+        <section class="card">
+            <h2>PRGA Process</h2>
+            <!-- Isi penjelasan untuk PRGA Process di sini -->
+            <p>i = 0</p>
+            <p>j = 0</p>
+            <p>Iteration 1</p>
+            <p>i = (0 + 1) mod 4</p>
+            <p>i = 1</p>
+            <p>j = (0 + S[1]) mod 4</p>
+            <p>j = 2</p>
+            <p>swap : S[1], S[2]</p>
+            <p>result :</p>
+            <table>
+                <tr>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>0</td>
+                </tr>
+            </table>
+            <p>K1 = S[(S[1]+S[2])] mod 4</p>
+            <p>K1 = S[5 mod 4] = S[1]</p>
+            <p>K1 = 3</p>
+
+            <p>Iteration 2</p>
+            <p>i = (1 + 1) mod 4</p>
+            <p>i = 2</p>
+            <p>j = (2 + S[2]) mod 4</p>
+            <p>j = 0</p>
+            <p>swap : S[2], S[0]</p>
+            <p>result :</p>
+            <table>
+                <tr>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            </table>
+            <p>K2 = S[(S[2]+S[0])] mod 4</p>
+            <p>K2 = S[3 mod 4] = S[3]</p>
+            <p>K2 = 0</p>
+
+            <p>Iteration 3</p>
+            <p>i = (2 + 1) mod 4</p>
+            <p>i = 3</p>
+            <p>j = (0 + S[3]) mod 4</p>
+            <p>j = 0</p>
+            <p>swap : S[3], S[0]</p>
+            <p>result :</p>
+            <table>
+                <tr>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+            </table>
+            <p>K3 = S[(S[3]+S[0])] mod 4</p>
+            <p>K3 = S[2 mod 4] = S[2]</p>
+            <p>K3 = 1</p>
+
+            <p>Iteration 4</p>
+            <p>i = (3 + 1) mod 4</p>
+            <p>i = 0</p>
+            <p>j = (0 + S[0]) mod 4</p>
+            <p>j = 0</p>
+            <p>swap : S[0], S[0]</p>
+            <p>result :</p>
+            <table>
+                <tr>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+            </table>
+            <p>K4 = S[(S[0]+S[0])] mod 4</p>
+            <p>K4 = S[0 mod 4] = S[0]</p>
+            <p>K4 = 0</p>
+            
+            <p>Iteration 5</p>
+            <p>i = (4 + 1) mod 4</p>
+            <p>i = 1</p>
+            <p>j = (0 + S[1]) mod 4</p>
+            <p>j = 3</p>
+            <p>swap : S[1], S[3]</p>
+            <p>result :</p>
+            <table>
+                <tr>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>3</td>
+                </tr>
+            </table>
+            <p>K5 = S[(S[1]+S[3])] mod 4</p>
+            <p>K5 = S[5 mod 4] = S[1]</p>
+            <p>K5 = 2</p>
+
+            <p>Iteration 6</p>
+            <p>i = (5 + 1) mod 4</p>
+            <p>i = 2</p>
+            <p>j = (3 + S[2]) mod 4</p>
+            <p>j = 0</p>
+            <p>swap : S[2], S[0]</p>
+            <p>result :</p>
+            <table>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>3</td>
+                </tr>
+            </table>
+            <p>K6 = S[(S[2]+S[0])] mod 4</p>
+            <p>K6 = S[1 mod 4] = S[1]</p>
+            <p>K6 = 2</p>
+
+        </section>
+
+        <section class="card">
+            <h2>Binary Code</h2>
+            <!-- Isi penjelasan untuk Binary Code di sini -->
+            <p>Plain text</p>
+            <table>
+                <tr>
+                    <th>Plain text</th>
+                    <th>Binary</th>
+                </tr>
+                <tr>
+                    <td>R</td>
+                    <td>01010010</td>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td>01100001</td>
+                </tr>
+                <tr>
+                    <td>h</td>
+                    <td>01101000</td>
+                </tr>
+                <tr>
+                    <td>m</td>
+                    <td>01101101</td>   
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td>01100001</td>    
+                </tr>
+                <tr>
+                    <td>t</td>
+                    <td>01110100</td>    
+                </tr>
+            </table>
+
+            <p>Key</p>
+
+            <table>
+                <tr>
+                    <th>Key</th>
+                    <th>Decimal</th>
+                    <th>Binary</th>
+                </tr>
+                <tr>
+                    <td>K1</td>
+                    <td>3</td>
+                    <td>00000011</td>
+                </tr>
+                <tr>
+                    <td>K2</td>
+                    <td>0</td>
+                    <td>00000000</td>
+                </tr>
+                <tr>
+                    <td>K3</td>
+                    <td>1</td>
+                    <td>00000001</td>
+                </tr>
+                <tr>
+                    <td>K4</td>
+                    <td>0</td>
+                    <td>00000000</td>
+                </tr>
+                <tr>
+                    <td>K5</td>
+                    <td>2</td>
+                    <td>00000010</td>
+                </tr>
+                <tr>
+                    <td>K6</td>
+                    <td>2</td>
+                    <td>00000010</td>
+                </tr>
+
+            </table>
+
+            <p>XOR operation</p>
+
+            <table>
+                <tr>
+                    <td>Plain text</td>
+                    <td>01010010</td>
+                    <td>01100001</td>
+                    <td>01101000</td>
+                    <td>01101101</td>
+                    <td>01100001</td>
+                    <td>01110100</td>
+                </tr>
+                <tr>
+                    <td>Key</td>
+                    <td>00000011</td>
+                    <td>00000000</td>
+                    <td>00000001</td>
+                    <td>00000000</td>
+                    <td>00000010</td>
+                    <td>00000010</td>
+                </tr>
+                <tr>
+                    <td>Cipher text</td>
+                    <td>01010001</td>
+                    <td>01100001</td>
+                    <td>01101001</td>
+                    <td>01101101</td>
+                    <td>01100011</td>
+                    <td>01110110</td>
+                </tr>
+                <tr>
+                    <td>Result</td>
+                    <td>Q</td>
+                    <td>a</td>
+                    <td>i</td>
+                    <td>m</td>
+                    <td>c</td>
+                    <td>v</td>
+                </tr>
+            </table>
+        </section>
+    </div>
+    <div class="watermark">© 2024 Made by Rahmat Mahardika.</div> 
+
+    <script src="rc4.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
